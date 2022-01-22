@@ -43,12 +43,12 @@ jobs:
         uses: carpentries/actions/setup-sandpaper@main
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
+          sandpaper-version: carpentries/sandpaper#227
 
       - name: "Setup Package Cache"
         uses: carpentries/actions/setup-lesson-deps@main
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
-          sandpaper-version: carpentries/sandpaper#227
 
       - name: "Deploy Site"
         run: |
