@@ -44,6 +44,7 @@ jobs:
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
           sandpaper-version: carpentries/sandpaper#227
+          varnish-version: carpentries/varnish@bytes-theme
 
       - name: "Setup Package Cache"
         uses: carpentries/actions/setup-lesson-deps@main
