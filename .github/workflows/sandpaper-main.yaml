@@ -47,7 +47,7 @@ jobs:
           varnish-version: carpentries/varnish@bytes-theme
 
       - name: "Setup Package Cache"
-        uses: carpentries/actions/setup-lesson-deps@speedy-deps
+        uses: carpentries/actions/setup-lesson-deps@main
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
 
