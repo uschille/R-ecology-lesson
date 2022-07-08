@@ -19,7 +19,7 @@ jobs:
           if [[ -z "${{ secrets.AWS_S3_BUCKET }}" || -z "${{ secrets.AWS_ACCESS_KEY_ID }}" || -z "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ]]; then
             :
           else
-            echo "::set-output::name=ok::true"
+            echo "::set-output name=ok::true"
           fi
     
   full-build:
