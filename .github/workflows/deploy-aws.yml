@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       ok: ${{ steps.check.outputs.ok }}
+      folder: ${{ steps.check.outputs.folder }}
     steps:
       - id: check
         run: |
