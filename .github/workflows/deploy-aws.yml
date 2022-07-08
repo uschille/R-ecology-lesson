@@ -24,6 +24,7 @@ jobs:
     
   full-build:
     name: "Deploy to AWS"
+    needs: [preflight]
     if: ${{ needs.preflight.outputs.ok }}
     runs-on: ubuntu-latest
     steps:
