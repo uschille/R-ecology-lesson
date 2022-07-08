@@ -8,9 +8,23 @@ on:
   workflow_dispatch:
 
 jobs:
+  preflight:
+    name: "Preflight Check"
+    runs-on: ubuntu-latest
+    outputs:
+      ok: ${{ steps.check.outputs.ok }}
+    steps:
+      - id: check
+        run: |
+          if [[ -z ${{ secrets.AWS_S3_BUCKET }} || -z ${{ secrets.AWS_ACCESS_KEY_ID }} || -z ${{ secrets.AWS_SECRET_ACCESS_KEY }} ]]; then
+            :
+          else
+            echo "::set-output::name=ok::true"
+          fi
+    
   full-build:
     name: "Deploy to AWS"
-    if: ${{ secrets.AWS_S3_BUCKET != "" }} # skip when we don't have this set up 
+    if: ${{ needs.preflight.outputs.ok }}
     runs-on: ubuntu-latest
     steps:
 
