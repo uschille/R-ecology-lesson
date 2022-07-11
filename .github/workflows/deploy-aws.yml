@@ -53,6 +53,7 @@ jobs:
       - name: "Invalidate CloudFront"
         uses: chetan/invalidate-cloudfront-action@master
         env:
+          DEBUG: 1
           PATHS: /*
           AWS_REGION: 'us-east-1'
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
