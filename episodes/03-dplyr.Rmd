@@ -12,13 +12,7 @@ suppressWarnings(surveys$date <- lubridate::ymd(paste(surveys$year,
                                                       sep = "-")))
 ```
 
-### Manipulating and analyzing data with dplyr
-
-***
-
 ::::::::::::::::::::::::::::::::::::::  objectives
-
-### Learning Objectives
 
 - Describe the purpose of the **`dplyr`** and **`tidyr`** packages.
 - Select certain columns in a data frame with the **`dplyr`** function `select`.
@@ -34,9 +28,8 @@ suppressWarnings(surveys$date <- lubridate::ymd(paste(surveys$year,
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-***
 
-# Data manipulation using **`dplyr`** and **`tidyr`**
+## Data manipulation using **`dplyr`** and **`tidyr`**
 
 Bracket subsetting is handy, but it can be cumbersome and difficult to read,
 especially for complicated operations. Enter **`dplyr`**. **`dplyr`** is a package for
@@ -228,7 +221,7 @@ surveys %>%
 ##  before 1995, and retain the columns `year`, `sex`, and `weight.`
 ```
 
-### Mutate
+## Mutate
 
 :::::::::::::::::::::::::::::::::::::::::::: instructor
 
@@ -320,14 +313,14 @@ surveys_hindfoot_cm <- surveys %>%
 ##  Hint: think about how the commands should be ordered to produce this data frame!
 ```
 
-### Split-apply-combine data analysis and the `summarize()` function
+## Split-apply-combine data analysis and the `summarize()` function
 
 Many data analysis tasks can be approached using the *split-apply-combine*
 paradigm: split the data into groups, apply some analysis to each group, and
 then combine the results. Key function of **`dplyr`** for this workflow are
 `group_by()` and `summarize()`.
 
-#### The `group_by()` and `summarize()` functions
+### The `group_by()` and `summarize()` functions
 
 `group_by()` is often used together with `summarize()`, which collapses each
 group into a single-row summary of that group.  `group_by()` takes as arguments
@@ -532,7 +525,7 @@ surveys %>%
 ##  columns `year`, `genus`, `species_id`, and `weight`.
 ```
 
-### Reshaping with gather and spread
+## Reshaping with gather and spread
 
 In the [spreadsheet
 lesson](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
@@ -566,7 +559,7 @@ a variable.
 We can do both these of transformations with two `tidyr` functions, `spread()`
 and `gather()`.
 
-#### Spreading
+### Spreading
 
 `spread()` takes three principal arguments:
 
@@ -614,7 +607,7 @@ surveys_gw %>%
   head()
 ```
 
-#### Gathering
+### Gathering
 
 The opposing situation could occur if we had been provided with data in the
 form of `surveys_spread`, where the genus names are column names, but we
@@ -745,7 +738,7 @@ surveys_long %>%
 ## 4. With this new data set, calculate the average of each `measurement` in each `year` for each different `plot_type`. Then `spread()` them into a data set with a column for `hindfoot_length` and `weight`. *Hint*: You only need to specify the key and value columns for `spread()`.
 ```
 
-# Exporting data
+## Exporting data
 
 Now that you have learned how to use **`dplyr`** to extract information from
 or summarize your raw data, you may want to export these new data sets to share
