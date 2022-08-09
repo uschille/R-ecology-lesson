@@ -6,6 +6,10 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE, purl=FALSE}
+source("setup.R")
+```
+
 We will use the code block and output below to demonstrate one of the new features
 provided by The Carpentries Workbench: automated feedback about changes to the
 rendered lesson content that would be made by a pull request.
