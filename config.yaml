@@ -50,6 +50,7 @@ episodes:
 - 03-dplyr.Rmd
 - 04-visualization-ggplot2.Rmd
 - 05-r-and-databases.Rmd
+- 06-pyramid-example.Rmd
 
 # Information for Learners
 learners: 
