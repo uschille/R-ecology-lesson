@@ -14,9 +14,9 @@ rendered lesson content that would be made by a pull request.
 
 ```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
 pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
+  c(Sky = 78, "Tasty side of pyramid" = 17, "Tastier side of pyramid" = 5), 
   init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
+  col = c("bisque", "chocolate", "chocolate4"), 
   border = FALSE
 )
 ```
